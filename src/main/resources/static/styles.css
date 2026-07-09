@@ -1,0 +1,153 @@
+:root {
+    --surface: #ffffff;
+    --ink: #172033;
+    --muted: #667085;
+    --line: #d9e1ec;
+    --soft: #f4f7fb;
+}
+
+body {
+    min-height: 100vh;
+    background:
+        linear-gradient(135deg, rgba(37, 99, 235, 0.10), rgba(20, 184, 166, 0.10)),
+        var(--soft);
+    color: var(--ink);
+    font-family: Arial, "Microsoft JhengHei", sans-serif;
+}
+
+.hero-panel,
+.tool-panel {
+    background: rgba(255, 255, 255, 0.94);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    box-shadow: 0 14px 36px rgba(23, 32, 51, 0.08);
+}
+
+.hero-panel {
+    padding: 36px;
+}
+
+.tool-panel {
+    padding: 22px;
+}
+
+.eyebrow {
+    color: #2563eb;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0;
+    text-transform: uppercase;
+}
+
+.display-title {
+    font-size: clamp(2rem, 5vw, 4.25rem);
+    font-weight: 800;
+    line-height: 1.05;
+}
+
+.lead {
+    max-width: 680px;
+    color: var(--muted);
+}
+
+.metric-board {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.metric-board > div {
+    min-height: 112px;
+    padding: 18px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: linear-gradient(180deg, #ffffff, #f8fafc);
+}
+
+.metric-board span {
+    display: block;
+    color: var(--muted);
+    font-size: 0.88rem;
+}
+
+.metric-board strong {
+    display: block;
+    margin-top: 10px;
+    font-size: 1.55rem;
+}
+
+.panel-heading {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    align-items: baseline;
+    margin-bottom: 18px;
+}
+
+.panel-heading h2 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 800;
+}
+
+.category-pill,
+.transaction-item {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: #ffffff;
+}
+
+.category-pill {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 12px;
+}
+
+.color-dot {
+    width: 12px;
+    height: 12px;
+    flex: 0 0 12px;
+    border-radius: 999px;
+}
+
+.transaction-list {
+    display: grid;
+    gap: 10px;
+    max-height: 440px;
+    overflow: auto;
+}
+
+.transaction-item {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 8px;
+    padding: 12px;
+}
+
+.transaction-item small {
+    color: var(--muted);
+}
+
+.amount-income {
+    color: #047857;
+}
+
+.amount-expense {
+    color: #dc2626;
+}
+
+@media (max-width: 575.98px) {
+    main.container-fluid {
+        padding: 16px !important;
+    }
+
+    .hero-panel,
+    .tool-panel {
+        padding: 18px;
+    }
+
+    .metric-board {
+        grid-template-columns: 1fr;
+    }
+}
