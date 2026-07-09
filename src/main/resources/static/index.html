@@ -12,12 +12,22 @@
 <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
     <div class="container-fluid px-4">
         <a class="navbar-brand fw-bold" href="/">
-            <i class="bi bi-wallet2 text-primary me-2"></i>Personal Finance
+            <i class="bi bi-wallet2 text-primary me-2"></i><span data-i18n="brand">Personal Finance</span>
         </a>
         <div class="d-flex align-items-center gap-2">
             <span id="userBadge" class="badge text-bg-light d-none"></span>
+            <div class="dropdown">
+                <button id="languageDropdownButton" class="btn btn-primary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-translate me-1"></i><span data-i18n="languageButton">Language</span>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li><button class="dropdown-item" type="button" data-lang="zh">&#20013;&#25991;</button></li>
+                    <li><button class="dropdown-item" type="button" data-lang="en">English</button></li>
+                    <li><button class="dropdown-item" type="button" data-lang="ja">&#26085;&#26412;&#35486;</button></li>
+                </ul>
+            </div>
             <button id="logoutButton" class="btn btn-outline-secondary btn-sm d-none">
-                <i class="bi bi-box-arrow-right me-1"></i>Logout
+                <i class="bi bi-box-arrow-right me-1"></i><span data-i18n="logout">Logout</span>
             </button>
         </div>
     </div>
@@ -27,24 +37,24 @@
     <section class="hero-panel mb-4">
         <div class="row g-4 align-items-center">
             <div class="col-lg-7">
-                <div class="eyebrow mb-2">Spring Boot + Bootstrap Portfolio</div>
-                <h1 class="display-title mb-3">Personal Finance Manager</h1>
-                <p class="lead mb-4">A full-stack portfolio app with JWT login, database-backed CRUD, monthly summaries, and a clean Bootstrap dashboard.</p>
+                <div class="eyebrow mb-2" data-i18n="eyebrow">Spring Boot + Bootstrap Portfolio</div>
+                <h1 class="display-title mb-3" data-i18n="heroTitle">Personal Finance Manager</h1>
+                <p class="lead mb-4" data-i18n="heroLead">A full-stack portfolio app with JWT login, database-backed CRUD, monthly summaries, and a clean Bootstrap dashboard.</p>
                 <div class="d-flex flex-wrap gap-2">
                     <button id="demoLoginButton" class="btn btn-primary">
-                        <i class="bi bi-lightning-charge me-1"></i>Demo Login
+                        <i class="bi bi-lightning-charge me-1"></i><span data-i18n="demoLogin">Demo Login</span>
                     </button>
                     <a class="btn btn-outline-primary" href="/api/status" target="_blank">
-                        <i class="bi bi-braces me-1"></i>API Status
+                        <i class="bi bi-braces me-1"></i><span data-i18n="apiStatus">API Status</span>
                     </a>
                 </div>
             </div>
             <div class="col-lg-5">
                 <div class="metric-board">
-                    <div><span>Monthly Income</span><strong id="incomeMetric">$0</strong></div>
-                    <div><span>Monthly Expense</span><strong id="expenseMetric">$0</strong></div>
-                    <div><span>Net Cash Flow</span><strong id="cashFlowMetric">$0</strong></div>
-                    <div><span>Budget Remaining</span><strong id="budgetMetric">$0</strong></div>
+                    <div><span data-i18n="monthlyIncome">Monthly Income</span><strong id="incomeMetric">$0</strong></div>
+                    <div><span data-i18n="monthlyExpense">Monthly Expense</span><strong id="expenseMetric">$0</strong></div>
+                    <div><span data-i18n="netCashFlow">Net Cash Flow</span><strong id="cashFlowMetric">$0</strong></div>
+                    <div><span data-i18n="budgetRemaining">Budget Remaining</span><strong id="budgetMetric">$0</strong></div>
                 </div>
             </div>
         </div>
@@ -56,39 +66,39 @@
         <div class="col-xl-4">
             <section class="tool-panel mb-4">
                 <div class="panel-heading">
-                    <h2>Login</h2>
+                    <h2 data-i18n="loginTitle">Login</h2>
                     <span class="text-secondary">demo@finance.dev / password123</span>
                 </div>
                 <form id="loginForm" class="vstack gap-3">
                     <div>
-                        <label class="form-label" for="emailInput">Email</label>
+                        <label class="form-label" for="emailInput" data-i18n="email">Email</label>
                         <input id="emailInput" class="form-control" type="email" value="demo@finance.dev" required>
                     </div>
                     <div>
-                        <label class="form-label" for="passwordInput">Password</label>
+                        <label class="form-label" for="passwordInput" data-i18n="password">Password</label>
                         <input id="passwordInput" class="form-control" type="password" value="password123" required>
                     </div>
                     <button class="btn btn-primary w-100" type="submit">
-                        <i class="bi bi-shield-lock me-1"></i>Login
+                        <i class="bi bi-shield-lock me-1"></i><span data-i18n="loginButton">Login</span>
                     </button>
                 </form>
             </section>
 
             <section class="tool-panel">
                 <div class="panel-heading">
-                    <h2 id="categoryFormTitle">Create Category</h2>
-                    <button id="cancelCategoryEditButton" class="btn btn-sm btn-outline-secondary d-none" type="button">Cancel edit</button>
+                    <h2 id="categoryFormTitle" data-i18n="createCategory">Create Category</h2>
+                    <button id="cancelCategoryEditButton" class="btn btn-sm btn-outline-secondary d-none" type="button" data-i18n="cancelEdit">Cancel edit</button>
                 </div>
                 <form id="categoryForm" class="vstack gap-3">
                     <input id="categoryIdInput" type="hidden">
-                    <input id="categoryNameInput" class="form-control" placeholder="Food, Salary, Transport" required>
+                    <input id="categoryNameInput" class="form-control" placeholder="Food, Salary, Transport" data-i18n-placeholder="categoryPlaceholder" required>
                     <select id="categoryTypeInput" class="form-select">
                         <option value="EXPENSE">Expense</option>
                         <option value="INCOME">Income</option>
                     </select>
-                    <input id="categoryColorInput" class="form-control form-control-color" type="color" value="#2563eb" title="Category color">
+                    <input id="categoryColorInput" class="form-control form-control-color" type="color" value="#2563eb" title="Category color" data-i18n-title="categoryColor">
                     <button id="saveCategoryButton" class="btn btn-outline-primary" type="submit">
-                        <i class="bi bi-plus-circle me-1"></i>Create Category
+                        <i class="bi bi-plus-circle me-1"></i><span data-i18n="createCategory">Create Category</span>
                     </button>
                 </form>
             </section>
@@ -97,41 +107,41 @@
         <div class="col-xl-8">
             <section class="tool-panel mb-4">
                 <div class="panel-heading">
-                    <h2 id="transactionFormTitle">Create Transaction</h2>
-                    <button id="cancelTransactionEditButton" class="btn btn-sm btn-outline-secondary d-none" type="button">Cancel edit</button>
+                    <h2 id="transactionFormTitle" data-i18n="createTransaction">Create Transaction</h2>
+                    <button id="cancelTransactionEditButton" class="btn btn-sm btn-outline-secondary d-none" type="button" data-i18n="cancelEdit">Cancel edit</button>
                 </div>
                 <form id="transactionForm" class="row g-3">
                     <input id="transactionIdInput" type="hidden">
                     <div class="col-md-4">
-                        <label class="form-label" for="transactionTypeInput">Type</label>
+                        <label class="form-label" for="transactionTypeInput" data-i18n="type">Type</label>
                         <select id="transactionTypeInput" class="form-select">
                             <option value="EXPENSE">Expense</option>
                             <option value="INCOME">Income</option>
                         </select>
                     </div>
                     <div class="col-md-4">
-                        <label class="form-label" for="transactionCategoryInput">Category</label>
+                        <label class="form-label" for="transactionCategoryInput" data-i18n="category">Category</label>
                         <select id="transactionCategoryInput" class="form-select" required></select>
                     </div>
                     <div class="col-md-4">
-                        <label class="form-label" for="amountInput">Amount</label>
+                        <label class="form-label" for="amountInput" data-i18n="amount">Amount</label>
                         <input id="amountInput" class="form-control" type="number" min="0.01" step="0.01" value="120" required>
                     </div>
                     <div class="col-md-4">
-                        <label class="form-label" for="dateInput">Date</label>
+                        <label class="form-label" for="dateInput" data-i18n="date">Date</label>
                         <input id="dateInput" class="form-control" type="date" required>
                     </div>
                     <div class="col-md-4">
-                        <label class="form-label" for="merchantInput">Merchant / Source</label>
+                        <label class="form-label" for="merchantInput" data-i18n="merchant">Merchant / Source</label>
                         <input id="merchantInput" class="form-control" value="Coffee Shop" required>
                     </div>
                     <div class="col-md-4">
-                        <label class="form-label" for="noteInput">Note</label>
-                        <input id="noteInput" class="form-control" placeholder="Optional">
+                        <label class="form-label" for="noteInput" data-i18n="note">Note</label>
+                        <input id="noteInput" class="form-control" placeholder="Optional" data-i18n-placeholder="optional">
                     </div>
                     <div class="col-12">
                         <button id="saveTransactionButton" class="btn btn-primary" type="submit">
-                            <i class="bi bi-check2-circle me-1"></i>Create Transaction
+                            <i class="bi bi-check2-circle me-1"></i><span data-i18n="createTransaction">Create Transaction</span>
                         </button>
                     </div>
                 </form>
@@ -141,7 +151,7 @@
                 <div class="col-lg-5">
                     <section class="tool-panel h-100">
                         <div class="panel-heading">
-                            <h2>Categories</h2>
+                            <h2 data-i18n="categories">Categories</h2>
                             <span id="categoryCount" class="text-secondary">0 records</span>
                         </div>
                         <div id="categoryList" class="vstack gap-2"></div>
@@ -150,7 +160,7 @@
                 <div class="col-lg-7">
                     <section class="tool-panel h-100">
                         <div class="panel-heading">
-                            <h2>This Month Transactions</h2>
+                            <h2 data-i18n="thisMonthTransactions">This Month Transactions</h2>
                             <span id="transactionCount" class="text-secondary">0 records</span>
                         </div>
                         <div id="transactionList" class="transaction-list"></div>
