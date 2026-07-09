@@ -2,7 +2,7 @@
 
 A Spring Boot portfolio project with a Bootstrap frontend for tracking income, expenses, monthly budgets, and financial summaries.
 
-## Why This Project Is Resume-Friendly
+## Features
 
 - JWT-based authentication with Spring Security
 - Clean layered architecture: controller, service, repository, DTO, entity
