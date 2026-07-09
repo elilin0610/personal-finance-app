@@ -7,9 +7,10 @@ A Spring Boot portfolio project with a Bootstrap frontend for tracking income, e
 - JWT-based authentication with Spring Security
 - Clean layered architecture: controller, service, repository, DTO, entity
 - JPA domain modeling for users, categories, transactions, and budgets
+- Database-backed CRUD for categories and transactions
 - Monthly reporting endpoint with aggregation logic
 - Bootstrap, HTML, CSS, and JavaScript frontend served by Spring Boot
-- H2 for local development and PostgreSQL driver ready for deployment
+- File-based H2 for local persistence and PostgreSQL driver ready for deployment
 - Bean Validation, centralized API errors, actuator health checks, and integration tests
 
 ## Tech Stack
@@ -46,6 +47,14 @@ http://localhost:8080
 ```
 
 Open this URL in the browser to use the Bootstrap frontend. The frontend can login with the demo account, load categories, create categories, create transactions, and show monthly summary metrics.
+
+Local data is stored in:
+
+```text
+./data/finance.mv.db
+```
+
+The `data/` folder is ignored by Git, so local database files will not be pushed.
 
 API status JSON:
 

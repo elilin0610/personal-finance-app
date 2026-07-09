@@ -101,7 +101,12 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 10px;
     padding: 10px 12px;
+}
+
+.min-width-0 {
+    min-width: 0;
 }
 
 .color-dot {
@@ -135,6 +140,21 @@ body {
 
 .amount-expense {
     color: #dc2626;
+}
+
+.icon-button {
+    width: 32px;
+    height: 32px;
+    display: inline-grid;
+    place-items: center;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    background: #ffffff;
+    color: #475467;
+}
+
+.icon-button:hover {
+    background: #f8fafc;
 }
 
 @media (max-width: 575.98px) {
