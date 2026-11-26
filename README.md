@@ -1,5 +1,7 @@
 # Personal Finance App｜個人理財應用
 
+**繁體中文** | [English](./README.en.md) | [日本語](./README.ja.md)
+
 以 Java / Spring Boot 與 Bootstrap 製作的 **AI 協作學習專案**，將記帳需求做成可在本機操作的 Web 原型。使用者可以管理收支分類與交易，查看月度收入、支出及預算摘要，並切換中文、英文與日文介面。
 
 > 此作品展示需求拆解、AI 工具協作與功能迭代的過程，不代表作者已能獨立完成所有後端、安全或部署工作。現有設定適合本機示範，不是可直接公開上線的正式金融服務。
@@ -105,9 +107,9 @@ java -jar target/personal-finance-app-0.0.1-SNAPSHOT.jar --server.address=127.0.
 
 逐步理解並能自行修改現有 API、補齊 CRUD 與授權測試、改善預算操作介面，以及建立分離的開發／展示環境。這些是計畫，不是已完成成果。
 
-## API Examples
+## API 範例
 
-Register:
+註冊：
 
 ```http
 POST /api/auth/register
@@ -120,7 +122,7 @@ Content-Type: application/json
 }
 ```
 
-Login:
+登入：
 
 ```http
 POST /api/auth/login
@@ -132,13 +134,13 @@ Content-Type: application/json
 }
 ```
 
-Use the returned token:
+使用回傳的權杖：
 
 ```http
 Authorization: Bearer <accessToken>
 ```
 
-Create a category:
+建立分類：
 
 ```http
 POST /api/categories
@@ -152,7 +154,7 @@ Authorization: Bearer <accessToken>
 }
 ```
 
-Create a transaction:
+新增交易：
 
 ```http
 POST /api/transactions
@@ -169,14 +171,14 @@ Authorization: Bearer <accessToken>
 }
 ```
 
-Monthly summary:
+月度摘要：
 
 ```http
 GET /api/reports/monthly-summary?month=2026-07
 Authorization: Bearer <accessToken>
 ```
 
-## Test
+## 測試指令
 
 ```bash
 ./mvnw test
